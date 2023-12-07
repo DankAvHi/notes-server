@@ -8,9 +8,12 @@ datasource db {
 }
 
 model Note {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String?  @db.VarChar(255)
-  content   String
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime? @updatedAt
+  title       String?   @db.VarChar(255)
+  content     String
+  pinned      Boolean   @default(false)
+  deleted     Boolean   @default(false)
+  attachments String[]  @default([])
 }
