@@ -3,7 +3,7 @@ import { Note as NotePrisma } from "@prisma/client";
 export class Note implements NotePrisma {
     id: number;
     createdAt: Date;
-    updatedAt: Date | null;
+    updatedAt: Date;
     title: string | null;
     content: string;
     pinned: boolean;
